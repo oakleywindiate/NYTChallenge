@@ -1,22 +1,30 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [articles, setArticles] = useState([]);
+  const [error, setError] = useState('');
+
+  const getArticles = async () => {
+    const url = 'https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=uLwEDDqAip2mKBL3DNO1NMENW70vpyyu'
+    setError('')
+
+    try {
+      const response = await fetch(url)
+      const loadArticles = await response.json()
+      setArticles(loadArticles)
+    } catch (error) {
+      setError("An error has occurred. Please try again.")
+    }
+  }
+
+  useEffect(() => {
+    getArticles()
+  }, [])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
