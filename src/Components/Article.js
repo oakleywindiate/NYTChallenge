@@ -1,8 +1,10 @@
 import React from 'react'
 
 export default function Article({ abstract, byline, created_date, title, section, subsection, multimediaCaption, multimediaCopyright, multimediaUrl }) {
-  
-        return (
+
+
+    
+return (
     <section>      
         <div>{abstract}</div>
         <div>{byline}</div> 
@@ -12,7 +14,7 @@ export default function Article({ abstract, byline, created_date, title, section
         <div>{subsection}</div>
         <div>{multimediaCaption}</div>
         <div>{multimediaCopyright}</div>
-        <div>{multimediaUrl}</div>
+        <img className="article-image" src={multimediaUrl} />
     </section>
   )
 }

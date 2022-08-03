@@ -26,6 +26,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <div>TOP STORIES</div>
       </header>
       {articles && <ArticleContainer articles={articles}/>}
       <div>{error}</div>
