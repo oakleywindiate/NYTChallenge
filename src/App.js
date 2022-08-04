@@ -1,5 +1,6 @@
-import { useEffect, useState } from 'react';
-import './App.css';
+import { useEffect, useState } from 'react'
+import ArticleContainer from './Components/ArticleContainer';
+import './App.css'
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -12,7 +13,7 @@ const App = () => {
     try {
       const response = await fetch(url)
       const loadArticles = await response.json()
-      setArticles(loadArticles)
+      setArticles(loadArticles.results)
     } catch (error) {
       setError("An error has occurred. Please try again.")
     }
@@ -25,7 +26,10 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
+        <div>TOP STORIES</div>
       </header>
+      {articles && <ArticleContainer articles={articles}/>}
+      <div>{error}</div>
     </div>
   );
 }
