@@ -1,25 +1,25 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
-import Details from './Details'
 import Article from './Article'
+import Details from './Details'
+import { useEffect, useState } from 'react'
 
-export default function ArticleContainer({ articles }) {
-    const [allArticles, setAllArticles] = useState([])
+export default function SortedArticlesContainer({ sortedArticles }) {
+    const [allSortedArticles, setAllSortedArticles] = useState([])
     const [details, setDetails] = useState([])
     const [articleTitle, setArticleTitle] = useState("")
 
 
 useEffect(() => {
-    setAllArticles(articles)
+    setAllSortedArticles(sortedArticles)
   }, [])
 
-
-const findArticle = (title) => {
-    const findArticle = articles.filter(article => article.title === title)
+  const findArticle = (title) => {
+    const findArticle = sortedArticles.filter(article => article.title === title)
    setDetails(findArticle)
-}
+}  
 
-    const singularArticle = articles.map((article, index) => {
+
+    const singularSortedArticle = sortedArticles.map((article, index) => {
         return (
             <div key={index}>
                 <Article
@@ -38,7 +38,7 @@ const findArticle = (title) => {
         )
       })
 
-      const detailsArticle = details.map((article, index) => {
+      const detailsSortedArticle = details.map((article, index) => {
         return (
             <div key={index}>
                 <Details
@@ -72,11 +72,10 @@ const findArticle = (title) => {
         )
       })  
 
-  return ( 
-    <section className="article-container">
-        {!articleTitle && <div>{singularArticle}</div>}
-        {articleTitle && <div>{detailsArticle}</div>}
-    </section>    
+  return (
+     <section>
+        {!articleTitle && <div>{singularSortedArticle}</div>}
+        {articleTitle && <div>{detailsSortedArticle}</div>}     
+     </section>
   )
 }
-
