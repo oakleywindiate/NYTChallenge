@@ -27,10 +27,7 @@ const findArticle = (title) => {
                 byline={article.byline}
                 created_date={article.created_date}
                 title={article.title}
-                section={article.section}
-                subsection={article.subsection}
                 multimediaCaption={article.multimedia[0].caption}
-                multimediaCopyright={article.multimedia[0].copyright}
                 multimediaUrl={article.multimedia[1].url}
                 />
                 <button onClick={() => {
