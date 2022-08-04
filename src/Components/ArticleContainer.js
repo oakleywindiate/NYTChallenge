@@ -73,7 +73,7 @@ const findArticle = (title) => {
       })  
 
   return ( 
-    <section>
+    <section className="article-container">
         {!articleTitle && <div>{singularArticle}</div>}
         {articleTitle && <div>{detailsArticle}</div>}
     </section>    

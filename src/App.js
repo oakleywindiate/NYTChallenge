@@ -38,12 +38,14 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <div>TOP STORIES</div>
+        <h1>TOP STORIES</h1>
       </header>
-      <SortBar sortArticles={sortArticles}/>
-      {!sortedArticles.length && <ArticleContainer articles={articles}/>}
-      {sortedArticles && <SortedArticlesContainer sortedArticles={sortedArticles}/>}
-      <div>{error}</div>
+      <main>
+        <SortBar sortArticles={sortArticles}/>
+        {!sortedArticles.length && <ArticleContainer articles={articles}/>}
+        {sortedArticles && <SortedArticlesContainer sortedArticles={sortedArticles}/>}
+        <div>{error}</div>
+      </main>  
     </div>
   );
 }

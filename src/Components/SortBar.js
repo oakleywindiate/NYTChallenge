@@ -9,7 +9,7 @@ export default function SortBar({ sortArticles }) {
     }
 
   return (
-    <div className="cat-filter-section">
+    <div className="article-filter-section">
         <div>Sort by Section:</div>
             <select
                 title="Filter By Section"
