@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
-import ArticleContainer from './Components/ArticleContainer';
+import ArticleContainer from './Components/ArticleContainer'
+import SortBar from './Components/SortBar'
 import './App.css'
 
 const App = () => {
@@ -21,13 +22,19 @@ const App = () => {
 
   useEffect(() => {
     getArticles()
+    console.log(articles.section)
   }, [])
+
+  const sortArticles = (section) => {
+    console.log(section, "section")
+  }
 
   return (
     <div className="App">
       <header className="App-header">
         <div>TOP STORIES</div>
       </header>
+      <SortBar sortArticles={sortArticles}/>
       {articles && <ArticleContainer articles={articles}/>}
       <div>{error}</div>
     </div>
