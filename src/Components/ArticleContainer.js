@@ -19,9 +19,9 @@ const findArticle = (title) => {
    setDetails(findArticle)
 }
 
-    const singularArticle = articles.map((article) => {
+    const singularArticle = articles.map((article, index) => {
         return (
-            <div>
+            <div key={index}>
                 <Article
                 abstract={article.abstract}
                 byline={article.byline}
@@ -38,9 +38,9 @@ const findArticle = (title) => {
         )
       })
 
-      const detailsArticle = details.map((article) => {
+      const detailsArticle = details.map((article, index) => {
         return (
-            <div>
+            <div key={index}>
                 <Details
                 abstract={article.abstract}
                 byline={article.byline}

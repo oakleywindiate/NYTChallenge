@@ -15,12 +15,12 @@ export default function SortBar({ sortArticles }) {
                 title="Filter By Section"
                 className="section-level-dropdown"
                 onChange={handleSelect}>
-                <option value="None">None</option>
-                <option value="Arts">Arts</option>
-                <option value="Movies">Movies</option>
-                <option value="Books">Books</option>
-                <option value="Theater">Theater</option>
-                <option value="Podcasts">Podcasts</option>
+                <option value="none">None</option>
+                <option value="arts">Arts</option>
+                <option value="movies">Movies</option>
+                <option value="books">Books</option>
+                <option value="theater">Theater</option>
+                <option value="podcasts">Podcasts</option>
             </select>
     </div>
   )
