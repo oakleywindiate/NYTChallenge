@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import ArticleContainer from './Components/ArticleContainer'
 import SortBar from './Components/SortBar'
+import SortedArticlesContainer from './Components/SortedArticlesContainer'
 import './App.css'
 
 const App = () => {
   const [articles, setArticles] = useState([]);
+  const [sortedArticles, setSortedArticles] = useState([])
   const [error, setError] = useState('');
 
   const getArticles = async () => {
@@ -26,7 +28,11 @@ const App = () => {
   }, [])
 
   const sortArticles = (section) => {
-    console.log(section, "section")
+    if (section === "none") {
+      setSortedArticles(null)
+    }
+      const filterArticles = articles.filter(article => article.section === section)
+      setSortedArticles(filterArticles)
   }
 
   return (
@@ -35,7 +41,8 @@ const App = () => {
         <div>TOP STORIES</div>
       </header>
       <SortBar sortArticles={sortArticles}/>
-      {articles && <ArticleContainer articles={articles}/>}
+      {!sortedArticles.length && <ArticleContainer articles={articles}/>}
+      {sortedArticles && <SortedArticlesContainer sortedArticles={sortedArticles}/>}
       <div>{error}</div>
     </div>
   );
