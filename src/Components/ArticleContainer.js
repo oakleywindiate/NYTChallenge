@@ -2,6 +2,7 @@ import React from 'react'
 import { useEffect, useState } from 'react'
 import Details from './Details'
 import Article from './Article'
+import '../App.css'
 
 export default function ArticleContainer({ articles }) {
     const [allArticles, setAllArticles] = useState([])
@@ -21,26 +22,30 @@ const findArticle = (title) => {
 
     const singularArticle = articles.map((article, index) => {
         return (
-            <div key={index}>
-                <Article
-                abstract={article.abstract}
-                byline={article.byline}
-                created_date={article.created_date}
-                title={article.title}
-                multimediaCaption={article.multimedia[0].caption}
-                multimediaUrl={article.multimedia[1].url}
-                />
-                <button onClick={() => {
-                    setArticleTitle(article.title)
-                    findArticle(article.title)
-                }}>DETAILS</button>
+            <div className="article-container" key={index}>
+                <div>
+                    <Article
+                    abstract={article.abstract}
+                    byline={article.byline}
+                    created_date={article.created_date}
+                    title={article.title}
+                    multimediaCaption={article.multimedia[0].caption}
+                    multimediaUrl={article.multimedia[1].url}
+                    />
+                </div>
+                <div className="details-div">    
+                    <button className="nav-btn details" onClick={() => {
+                        setArticleTitle(article.title)
+                        findArticle(article.title)
+                    }}>DETAILS</button>  
+                </div>     
             </div>
         )
       })
 
       const detailsArticle = details.map((article, index) => {
         return (
-            <div key={index}>
+            <div className="article-container" key={index}>
                 <Details
                 abstract={article.abstract}
                 byline={article.byline}
@@ -65,16 +70,18 @@ const findArticle = (title) => {
                 multimedia={article.multimedia}
                 short_url={article.short_url}
                 />
-                <button onClick={() => {
-                    setArticleTitle("")
-                }}>BACK</button>
+                <div className="back-div">
+                    <button className="nav-btn back" onClick={() => {
+                        setArticleTitle("")
+                    }}>BACK</button>
+                </div>
             </div>
         )
       })  
 
   return ( 
-    <section className="article-container">
-        {!articleTitle && <div>{singularArticle}</div>}
+    <section className="article-section">
+        {!articleTitle && <div className="singular-article">{singularArticle}</div>}
         {articleTitle && <div>{detailsArticle}</div>}
     </section>    
   )

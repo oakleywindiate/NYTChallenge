@@ -21,26 +21,30 @@ useEffect(() => {
 
     const singularSortedArticle = sortedArticles.map((article, index) => {
         return (
-            <div key={index}>
-                <Article
-                abstract={article.abstract}
-                byline={article.byline}
-                created_date={article.created_date}
-                title={article.title}
-                multimediaCaption={article.multimedia[0].caption}
-                multimediaUrl={article.multimedia[1].url}
-                />
-                <button onClick={() => {
+            <div className="article-container" key={index}>
+                <div>
+                    <Article
+                    abstract={article.abstract}
+                    byline={article.byline}
+                    created_date={article.created_date}
+                    title={article.title}
+                    multimediaCaption={article.multimedia[0].caption}
+                    multimediaUrl={article.multimedia[1].url}
+                    />
+                </div>    
+                <div className="details-div">    
+                <button className="nav-btn details" onClick={() => {
                     setArticleTitle(article.title)
                     findArticle(article.title)
                 }}>DETAILS</button>
+                </div>
             </div>
         )
       })
 
       const detailsSortedArticle = details.map((article, index) => {
         return (
-            <div key={index}>
+            <div className="article-container" key={index}>
                 <Details
                 abstract={article.abstract}
                 byline={article.byline}
@@ -65,16 +69,18 @@ useEffect(() => {
                 multimedia={article.multimedia}
                 short_url={article.short_url}
                 />
-                <button onClick={() => {
-                    setArticleTitle("")
-                }}>BACK</button>
+                <div className="back-div">
+                    <button className="nav-btn back" onClick={() => {
+                        setArticleTitle("")
+                    }}>BACK</button>
+                </div>
             </div>
         )
       })  
 
   return (
-     <section>
-        {!articleTitle && <div>{singularSortedArticle}</div>}
+     <section className="article-section">
+        {!articleTitle && <div className="singular-article">{singularSortedArticle}</div>}
         {articleTitle && <div>{detailsSortedArticle}</div>}     
      </section>
   )
