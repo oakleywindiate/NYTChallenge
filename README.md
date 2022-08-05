@@ -4,7 +4,7 @@
 Browse the New York Times Top Stories for the day, see details, and sort by categories.
 
 ## Purpose
-This application was built as part of an interview simulation. Given eight hours, developers were tasked with building a website that displays NYT articles from the NYT API. This project aims to teach new developers how to speak to their process for decision making and delivering a viable MVP within the time constraints of the assignment. 
+This application was built as part of an interview simulation. Given eight hours, developers were tasked with building a website that displays NYT articles from the NYT API,has an intuitive UI, and employs a testing suite. This project aims to teach new developers how to speak to their process for decision making and delivering a viable MVP within the time constraints of the assignment. 
 
 ### Features
 * View all NYT articles
