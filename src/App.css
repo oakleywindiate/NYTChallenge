@@ -32,7 +32,10 @@
 }
 
 .article-left {
+  display: flex;
+  flex-direction: column;
   width: 40%;
+  justify-content: center;
 }
 
 .article-right {
@@ -131,6 +134,10 @@ select {
   flex-direction: column;
 }
 
+.back {
+  width: 150%;
+}
+
 
 @media screen and (max-width: 80em) {
   .article-image
@@ -201,6 +208,7 @@ select {
 
   .details {
     width: 20%;
+    margin-top: 1em;
   }
 
   .multimedia-caption {
@@ -212,6 +220,11 @@ select {
   .App {
     padding-left: 1em;
     padding-right: 1em;
+  }
+
+  .App-header {
+    min-height: 5vh;
+    padding: 0;
   }
 
   .article-image {

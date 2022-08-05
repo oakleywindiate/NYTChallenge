@@ -6,7 +6,7 @@ export default function Article({ abstract, byline, created_date, title, multime
 return (
     <section className="article-inner-section">  
       <div className="article-left">
-        <img className="article-image" src={multimediaUrl} />
+        <img className="article-image" src={multimediaUrl} alt={multimediaCaption}/>
         <div className="multimedia-caption">{multimediaCaption}</div>
       </div>   
       <div className="article-right"> 
