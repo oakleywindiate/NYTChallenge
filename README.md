@@ -41,6 +41,7 @@ As a user, I can...
 3) Search through all Top Stories articles 
 
 ### Wireframing
+<img width="845" alt="Screen Shot 2022-08-04 at 9 34 31 PM" src="https://user-images.githubusercontent.com/93341234/182996125-d247f590-a32f-4f04-a746-b22593017a67.png">
 
 
 ### Development Team
