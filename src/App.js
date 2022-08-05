@@ -24,7 +24,6 @@ const App = () => {
 
   useEffect(() => {
     getArticles()
-    console.log(articles.section)
   }, [])
 
   const sortArticles = (section) => {

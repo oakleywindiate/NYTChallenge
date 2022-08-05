@@ -9,7 +9,7 @@ describe('Home page', () => {
     })
   
     it('Should display all Top Stories from NYT', () => {
-      cy.get('section.article-container')
+      cy.get('div.article-container')
     })
   
     it('Should display sort box', () => {
