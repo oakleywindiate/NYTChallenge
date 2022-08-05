@@ -38,7 +38,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>TOP STORIES</h1>
+        <h1 className="top-stories">TOP STORIES</h1>
       </header>
       <main>
         <SortBar sortArticles={sortArticles}/>
