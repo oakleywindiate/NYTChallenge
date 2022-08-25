@@ -10,9 +10,6 @@ This application was built as part of an interview simulation. Given eight hours
 * View all NYT articles
 <img width="1439" alt="Screen Shot 2022-08-04 at 9 30 26 PM" src="https://user-images.githubusercontent.com/93341234/182995649-2637d7ae-9fc0-4de2-b7ef-35198335767b.png">
 
-* See Details
-<img width="1440" alt="Screen Shot 2022-08-04 at 9 32 14 PM" src="https://user-images.githubusercontent.com/93341234/182995869-c609ed64-ad36-4ffd-994e-2257354e783e.png">
-
 * Sort by Section
 <img width="1440" alt="Screen Shot 2022-08-04 at 9 33 19 PM" src="https://user-images.githubusercontent.com/93341234/182995994-170eac30-fd7a-4a05-a5ad-71840bb0dc42.png">
 
